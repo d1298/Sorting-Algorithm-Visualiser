@@ -1,0 +1,13 @@
+#squares div{
+    width: 0.5vw;
+    background:red;
+    display: block;
+    float: right;
+    position: relative;
+    margin: 0.2vw;
+}
+
+#squares {
+    display: flex;
+    align-items: flex-end;
+}
