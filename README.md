@@ -1,5 +1,7 @@
 # Sorting Algorithm Visualiser
 
+View Program here: https://d1298.github.io/Sorting-Algorithm-Visualiser/
+
 I created this to easily visualise the a few different sorting algorithms. The chart is created using pure css.
 
 Press one of the four buttons with sorting algorithm names on them to randomise the chart and start the sorting algorithm, at any time press the stop button to stop the algorithm. 
