@@ -1,13 +1,197 @@
-#squares div{
-    width: 0.5vw;
-    background:red;
-    display: block;
-    float: right;
-    position: relative;
-    margin: 0.2vw;
+@font-face {
+    font-family: 'SFFont'; /*a name to be used later*/
+    src: url('SFPRODISPLAYMEDIUM.OTF'); /*URL to font*/
 }
 
+/* General body settings */
+body {
+    overflow: hidden;
+    background: radial-gradient(rgb(0, 0, 0), rgba(68, 66, 66, 0.08) 90%);
+    font-family: 'SFFont';
+    background-color: #1b1515;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    margin: 0;
+    padding: 0;
+}
+
+/* Styling for the range sliders */
+.slider {
+    width: 60%;
+    margin: 10px 0;
+    -webkit-appearance: none;
+    appearance: none;
+    background: #F4F4F7;
+    height: 8px;
+    border-radius: 4px;
+    transition: all 0.1s ease;
+}
+
+.slider:hover {
+    background: #c0c0c0;
+}
+
+.slider::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    background: #254b74;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: all 0.1s ease;
+}
+
+.slider::-webkit-slider-thumb:hover {
+    background: #3b7bbf;
+}
+
+.slider::-moz-range-thumb {
+    background: #4a90e2;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: all 0.1s ease;
+}
+
+.slider::-moz-range-thumb:hover {
+    background: #3b7bbf;
+}
+
+/* Styling for the range slider labels */
+p {
+    font-family: SFFont;
+    font-size: 18px;
+    color: rgb(202, 202, 202);
+    margin: 5px 0;
+}
+
+/* Styling for status text */
+.status {
+    font-family: SFFont;
+    font-size: 20px;
+    margin-top: 5px;
+    margin-bottom: 5px;
+    text-align: center;
+}
+
+#status {
+    font-family: SFFont;
+    color: rgb(202, 202, 202);
+}
+
+
+/* Buttons styling */
+button {
+    font-family: SFFont;
+    
+    padding: 12px 24px;
+    font-size: 16px;
+    color: white;
+    background-color: black;
+    border: 5px solid #2e5c8e;
+    border-radius: 4px;
+    cursor: pointer;
+    margin: 5px;
+    transition: all 0.1s ease;
+    width: 10vw
+}
+
+button:hover {
+    background-color: #3b7bbf64;
+    border: 5px solid #3b7bbf72;
+}
+
+button:active {
+    background-color: #1e45595d;
+}
+
+button:focus {
+    outline: none;
+}
+
+/* Styling for the container of the sliders */
+.slidecontainer {
+    width: 80%;
+    max-width: 600px;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+/* Styling for the sorting display container */
 #squares {
     display: flex;
+    justify-content: center;
     align-items: flex-end;
+    gap: 0px;
+    margin-top: 30px;
+    width: 70vw;
+    height: 50vh;
+    padding: 15px;
+    box-sizing: border-box;
+    background-color: #c5c5c5;
+    border-radius: 2.5px;
+    box-shadow: 2px 10px 16px rgba(77, 76, 76, 0.159);
+}
+
+#squares div {
+    background: #ff7300;
+    height: 50px;
+    box-shadow: 1px 2px 2px rgba(0, 0, 0, 0.011);
+}
+
+/* Styling for the square elements */
+.square {
+    background-color: #ff5900;
+    width: 100%;
+}
+
+/* Form container styling */
+form {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    margin-top: 20px;
+    width: 100%;
+}
+
+form button {
+    margin-right: 15px;
+}
+
+
+.star {
+    z-index: -1;
+    position: absolute;
+    background-color: white;
+    border-radius: 50%;
+    opacity: 0.8;
+    animation: twinkle 20s infinite ease-in-out, moveStar 50s linear infinite;
+}
+
+/* Twinkle effect */
+@keyframes twinkle {
+    0%, 100% {
+        opacity: 0.8;
+    }
+    50% {
+        opacity: 1;
+    }
+}
+
+/* Randomized movement for stars */
+@keyframes moveStar {
+    0% {
+        left: var(--startX);
+        top: var(--startY);
+    }
+    100% {
+        left: var(--endX);
+        top: var(--endY);
+    }
 }
